@@ -6,11 +6,11 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "fitness-lab-db951.firebaseapp.com",
-  projectId: "fitness-lab-db951",
-  storageBucket: "fitness-lab-db951.appspot.com",
-  messagingSenderId: "952983754578",
-  appId: "1:952983754578:web:2040e9294280dd2a4a4c8b"
+  authDomain: "fitness-tracker-bc6bd.firebaseapp.com",
+  projectId: "fitness-tracker-bc6bd",
+  storageBucket: "fitness-tracker-bc6bd.appspot.com",
+  messagingSenderId: "1079110849604",
+  appId: "1:1079110849604:web:882bc501e241aac10e1811"
 };
 
 // Initialize Firebase
