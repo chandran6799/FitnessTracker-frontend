@@ -104,7 +104,7 @@ const DashboardProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        `http://localhost:5000/api/user/update/${currentuser.rest._id}`,
+        `https://fitness-tracker-backend-a17f.onrender.com/api/user/update/${currentuser.rest._id}`,
         {
           method: "PUT",
           headers: {
@@ -137,7 +137,7 @@ const DashboardProfile = () => {
     try {
       dispatch(deleteUserStart());
       const response = await fetch(
-        `http://localhost:5000/api/user/delete/${currentuser.rest._id}`,
+        `https://fitness-tracker-backend-a17f.onrender.com//api/user/delete/${currentuser.rest._id}`,
         {
           method: "DELETE",
           headers: {

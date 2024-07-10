@@ -29,7 +29,7 @@ const Signup = () => {
     try {
       dispatch(signInStart());
       const response = await fetch(
-        "http://localhost:5000/api/auth/login-user",
+        "https://fitness-tracker-backend-a17f.onrender.com/api/auth/login-user",
         {
           method: "POST",
           headers: {
