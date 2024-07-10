@@ -68,7 +68,7 @@ const DashboardProfile = () => {
       },
       (error) => {
         setImageFileUploadError(
-          "Could not upload the image (File size must be less than 2MB"
+          "Could not upload the image (File size must be less than 2MB)"
         );
         setImageFileUrl(null);
         setImageFileUploadProgress(null);
