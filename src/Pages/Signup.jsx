@@ -23,7 +23,7 @@ const Signup = () => {
       setLoading(true);
       setErrorMessage(null);
       const response = await fetch(
-        "https://fitness-tracker-backend-a17f.onrender.com/api/auth/reigster-user",
+        "https://fitness-tracker-backend-a17f.onrender.com/api/auth/register-user",
         {
           method: "POST",
           headers: {
