@@ -14,11 +14,11 @@ const Signup = () => {
   const [formData, setFormData] = useState({});
   const dispatch = useDispatch();
   const { loading, error: errorMessage } = useSelector((state) => state.user);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+    
   };
 
   const handleSubmit = async (e) => {
@@ -44,7 +44,7 @@ const Signup = () => {
       }
       if (response.ok) {
         localStorage.setItem("Token", data.token);
-        dispatch(signInSuccess((data)));
+        dispatch(signInSuccess(data));
         navigate("/");
       }
     } catch (error) {

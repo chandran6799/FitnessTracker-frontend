@@ -12,7 +12,7 @@ const Signup = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
-  };
+    };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
