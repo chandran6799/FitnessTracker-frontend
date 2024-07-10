@@ -3,23 +3,52 @@ import {
   Button,
   Dropdown,
   DropdownDivider,
+  Modal,
   Navbar,
 } from "flowbite-react";
-import React from "react";
+import React, { useState } from "react";
 import { IoFitnessOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { signOutSuccess } from "../Redux/Slice/userSlice";
+import { deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutSuccess } from "../Redux/Slice/userSlice";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
+
 
 const Header = () => {
   const path = useLocation().pathname;
   const { currentuser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
   const handleSignout = () => {
     dispatch(signOutSuccess());
     localStorage.removeItem("Token");
     navigate("/signin");
+  };
+
+  const handleDelete = async () => {
+    setShowModal(false);
+    try {
+      dispatch(deleteUserStart());
+      const response = await fetch(
+        `https://fitness-tracker-backend-a17f.onrender.com//api/user/delete/${currentuser.rest._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("Token"),
+          },
+        }
+      );
+      const data = await response.json();
+      if (!response.ok) {
+        dispatch(deleteUserFailure(data.message));
+      } else {
+        dispatch(deleteUserSuccess(data));
+      }
+    } catch (error) {
+      dispatch(deleteUserFailure(error.message));
+    }
   };
 
   return (
@@ -81,7 +110,8 @@ const Header = () => {
               <Dropdown.Item>profile</Dropdown.Item>
             </Link>
             <DropdownDivider />
-            <Dropdown.Item onClick={handleSignout}>Sign Out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout}>SignOut</Dropdown.Item>
+            <Dropdown.Item onClick={() => setShowModal(true)}>Delete Account</Dropdown.Item>
           </Dropdown>
         ) : (
           <Link to="/signin">
@@ -92,6 +122,30 @@ const Header = () => {
         )}
         <Navbar.Toggle className="bg-fuchsia-800 text-white" />
       </Navbar>
+      <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        popup
+        size="md"
+      >
+        <Modal.Header />
+        <Modal.Body>
+          <div className="text-center">
+            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 mb-4 mx-auto" />
+            <h3 className="mb-5 text-gray-500 text-lg">
+              Are you sure you want to delete this Account ?
+            </h3>
+            <div className="flex justify-center gap-20">
+              <Button color="failure" onClick={handleDelete}>
+                Yes,I'm sure
+              </Button>
+              <Button color="gray" onClick={() => setShowModal(false)}>
+                No, cancle
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
