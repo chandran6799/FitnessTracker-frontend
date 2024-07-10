@@ -13,10 +13,12 @@ This project is a web application built with the MERN (MongoDB, Express.js, Reac
 
 Frontend Integration:
 https://github.com/chandran6799/FitnessTracker-frontend
+
 https://main--fitnesslab.netlify.app/signin
 
 Backend Integration
 https://github.com/chandran6799/Fitness-Tracker-backend
+
 https://fitness-tracker-backend-a17f.onrender.com/
 
 Technologies:
