@@ -9,16 +9,19 @@ Currently, two official plugins are available:
 
 
 Fitness Tracker using MERN Stack:
+
 This project is a web application built with the MERN (MongoDB, Express.js, React.js, Node.js) to view users daily workouts.
 
 Frontend Integration:
 
 https://github.com/chandran6799/FitnessTracker-frontend
+
 https://main--fitnesslab.netlify.app/signin
 
 Backend Integration
 
 https://github.com/chandran6799/Fitness-Tracker-backend
+
 https://fitness-tracker-backend-a17f.onrender.com/
 
 Technologies:
