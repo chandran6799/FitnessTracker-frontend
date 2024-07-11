@@ -27,6 +27,7 @@ when Register User EndPoint:
 /api/auth/register-user
 
 Login User End Point:
+
 /api/auth/login-user
 
 Backend Integration
