@@ -18,6 +18,17 @@ https://github.com/chandran6799/FitnessTracker-frontend
 
 https://main--fitnesslab.netlify.app/signin
 
+EndPoint:
+
+http://localhost:5000
+
+when Register User EndPoint:
+
+/api/auth/register-user
+
+Login User End Point:
+/api/auth/login-user
+
 Backend Integration
 
 https://github.com/chandran6799/Fitness-Tracker-backend
