@@ -109,7 +109,7 @@ const DashboardProfile = () => {
           method: "PUT",
           headers: {
             "content-Type": "application/json",
-            token: localStorage.getItem("Token"),
+            "token": localStorage.getItem("Token"),
           },
           body: JSON.stringify(formData),
         }
@@ -137,12 +137,12 @@ const DashboardProfile = () => {
     try {
       dispatch(deleteUserStart());
       const response = await fetch(
-        `https://fitness-tracker-backend-a17f.onrender.com//api/user/delete/${currentuser.rest._id}`,
+        `https://fitness-tracker-backend-a17f.onrender.com/api/user/delete/${currentuser.rest._id}`,
         {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            token: localStorage.getItem("Token"),
+            "token": localStorage.getItem("Token"),
           },
         }
       );
