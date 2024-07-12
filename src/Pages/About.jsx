@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="mb-24">
+    <div className="mb-24 mt-5">
       <div className="mt-8">
         <h1 className="ml-80 -mb-24 text-2xl font-bold">Introduction:</h1>
 
@@ -11,7 +11,7 @@ const About = () => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0pb2jd6uORmuVv5Co710kS5Yc1Hd9VTLMw&s"
         />
 
-        <p className="mt-14 text-right p-5">
+        <p className="mt-14 text-left p-5">
           <span className="font-bold text-2xl">A</span> fitness tracker is a
           device that uses sensors to track your orientation, movement, and
           rotation. The device collects data and converts it into steps,
@@ -50,10 +50,10 @@ const About = () => {
           src=" https://integrio.net/static/8e824f4e387101e186548e849a414203/patient-health-1.png"
         />
 
-        <h5 className="ml-10 mt-5 text-xl text-black font-semibold mb-2">
+        <h5 className="ml-10 mt-10 text-xl text-black font-semibold mb-2">
           Monitoring your health:
         </h5>
-        <p className="text-right mr-10">
+        <p className="text-left mr-10">
           Indulge in self-care and track your fitness level. A fitness tracker
           lets you watch and record your heart rate, daily burned calories and
           step counts. Self-tracking allows you to stick to a healthier diet,
