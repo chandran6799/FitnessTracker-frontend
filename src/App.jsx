@@ -10,6 +10,7 @@ import Foot from "./Components/Foot";
 import PrivateRoute from "./Components/PrivateRoute";
 import MyDashboard from "./Pages/MyDashboard";
 import Dashboard from "./Pages/Dashboard";
+import Workouts from "./Pages/Workouts";
 
 const App = () => {
   return (
@@ -23,9 +24,11 @@ const App = () => {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
+            <Route path="/workouts" element={<Workouts /> } />
           </Route>          
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          
         </Routes>
         <Foot />
       </BrowserRouter>

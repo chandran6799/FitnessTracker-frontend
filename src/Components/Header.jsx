@@ -53,6 +53,11 @@ const Header = () => {
               Schedule
             </Link>
           </Navbar.Link>
+          <Navbar.Link active={path === "/workouts"} as={"div"}>
+            <Link className="font-bold hover:text-fuchsia-800" to="/workouts">
+             Workouts
+            </Link>
+          </Navbar.Link>
           <Navbar.Link active={path === "/about"} as={"div"}>
             <Link className="font-bold hover:text-fuchsia-800" to="/about">
               About
